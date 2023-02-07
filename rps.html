@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTC-8">
+        <title>Rock Paper Scissors</title>
+    </head>
+
+    <body>
+        <script>
+            // function to get the computer's answer
+            function getComputerChoice(){
+                // generate random number from 0, 1, 2
+                var choice = Math.floor(Math.random() * 3);
+                
+                if(choice == 0){
+                    var finalChoice = "Rock";
+                } else if(choice == 1){
+                    var finalChoice = "Paper";
+                } else{
+                    var finalChoice = "Scissors";
+                }
+
+                return finalChoice;
+            }
+            
+            
+        </script>
+    </body>
+</html>
