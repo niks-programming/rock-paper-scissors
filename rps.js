@@ -4,11 +4,11 @@ function getComputerChoice(){
     var compChoice = Math.floor(Math.random() * 3);
             
     if(compChoice == 0){
-        var finalChoice = "Rock";
+        var finalChoice = "rock";
     } else if(compChoice == 1){
-        var finalChoice = "Paper";
+        var finalChoice = "paper";
     } else{
-        var finalChoice = "Scissors";
+        var finalChoice = "scissors";
     }
 
     return finalChoice;
@@ -16,8 +16,21 @@ function getComputerChoice(){
             
 // function to get  the player's choice
 function getPlayerChoice(){
-    var playerChoice = prompt("What do you choose? ");
+    var playerChoice = prompt("What do you choose? Rock, Paper or Scissors?");
+    playerChoice = playerChoice.toLowerCase();
     return playerChoice;
 }
 
-getPlayerChoice()
+// function that executes one game
+function theGame(human, computer){
+    if(human == computer){
+        alert("The game is a draw! Both players chose " + human + ".");
+    } else if((human == "rock" && computer == "paper") || (human == "paper" && computer == "scissors") || (human == "scissors" && computer == "rock")){
+        alert("You lose, " + computer + " beats " + human + "!");
+    } else{
+        alert("You win, " + human + " beats " + computer + "!");
+    }
+}
+
+// play the game
+theGame(human = getPlayerChoice(), computer = getComputerChoice());
